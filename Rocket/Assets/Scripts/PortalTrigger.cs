@@ -18,8 +18,10 @@ public class PortalTrigger : MonoBehaviour {
         if (colliderInfo.tag == "Player")
         {
             //Fade in, fade out.
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            float fadeTime = GameObject.Find("_GM").GetComponent<FadeScene>().BeginFade(1);
             Debug.Log("Trigger");
+            GameManager.ChangeLevel(fadeTime);
+           
         }
 
     }
